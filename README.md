@@ -1,0 +1,2 @@
+# careSync
+hosipital management system
