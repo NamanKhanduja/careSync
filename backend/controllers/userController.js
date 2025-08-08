@@ -30,7 +30,14 @@ const registerUser = async (req, res) => {
       return res.status(400).json({ success: false, message: "Email already registered" });
     }
 
-    const user = await userModel.create({ name, email, password });
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const user = await userModel.create({
+      name,
+      email,
+      password: hashedPassword
+    });
 
     if (!process.env.JWT_SECRET) {
       throw new Error("JWT_SECRET is missing");
