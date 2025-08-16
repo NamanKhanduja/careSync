@@ -39,7 +39,7 @@ const Navbar = () => {
         {/* Admin Panel Link */}
         <li
           className='py-1 px-4 border rounded-full hover:bg-gray-100 cursor-pointer'
-          onClick={() => window.open('http://localhost:5174', '_blank')} // change when deployed
+          onClick={() => window.open('https://care-sync-admin-nine.vercel.app', '_blank')} // change when deployed
         >
           ADMIN PANEL
         </li>     
